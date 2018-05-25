@@ -1401,7 +1401,7 @@ client.on('message', message => {
        .addField('Server', message.guild.name)
        .addField('Sender', message.author.username)
        .addField('Message', args)
-       .setImage("https://i.imgur.com/BnMhJXQ.png")
+       .setImage("")
        .setThumbnail(message.author.avatarURL)
        .setFooter(copy, client.user.avatarURL);
     m.send({ embed: bc })
