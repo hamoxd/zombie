@@ -13,35 +13,27 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
- if (message.content.includes('disc ord.gg')){      
-                     if(!message.channel.guild) return message.reply ('')
-                 if (!message.member.hasPermissions(['MANAGE_MESSAGES'])){
-    message.delete() 
-     var member = message.member
-    
- 
-       
-          member.ban().then((member) => {
-              message.channel.send("", {embed: {
-              author: {
-              },
-              title: 'بسبب النشر ' + member.displayName + ' تم طرد',
-              color: 490101,
-              }
-            });
+client.on('ready', function(){
+    var ms = 60000 ;
+    var setGame = ['RMDAN KREM','RMDAN KREM','^^help | ^^invite','RMDAN KREM'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
         }
-      ) 
-    }
-}
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/GamerzBot`);
+    }, ms);
+
 });
 
 client.on('ready', () => {
-  client.user.setGame(`RMDAN KREM`,'https://www.twitch.tv/v5bz');
+  console.log(`Logged in as ${client.user.tag}!`);
 });
-
-
-
 
 client.on('message', msg => {
   if (msg.content === 'ping') {
@@ -50,7 +42,7 @@ client.on('message', msg => {
 });
 
 client.on('ready',  () => {
-  console.log('By : حمو');
+  console.log('By : حمو ');
   console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -62,27 +54,40 @@ client.on("message", message => {
      if(!message.channel.guild) return;
 
  if (message.content === "^^help") {
-   message.react("??")
+   message.react("😜")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .addField("?HaMoBoT? ?اسم البوت?", true)
+      .addField("『ZOMBIE BOT』 『اسم البوت』", true)
       
-      .addField("?@! Z |?A???#6947??مصمم البوت?", true)
+      .addField("『@حـ♥̨̥̬̩سوني آإلعرآإقـ♥̨̥̬̩ي#7725』『مصمم البوت』", true)
       
-      .addField("?^help^????اذا تبي جميع الاوامر مع اوامر اضافية???", true)
+      .addField("『^help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", true)
       
-	    .addField("?^help^^????اذا تبي الاوامر العامة???", true)
+	    .addField("『^help^^』👻『اذا تبي الاوامر العامة』😳", true)
 	    
-      .addField("?^help^^^????اذا تبي  الاوامر الادارية???", true)
+      .addField("『^help^^^』😮『اذا تبي  الاوامر الادارية』🤒", true)
       
-      .addField("?????قريبا سوف نضيف المزيد و المزيد من الاوامر ?????", true)
+      .addField("『🤑』『قريبا سوف نضيف المزيد و المزيد من الاوامر 』『😉』", true)
       
   message.channel.sendMessage({embed});
 
  }
 });
 
+prefix = "^^"
+client.on('message', message => {
 
+  if (message.content.startsWith( prefix + "z")) {
+  if (!message.channel.guild) return;
+  let args = message.content.split(" ").slice(1).join(' ');
+  client.channels.get("448204717185826816").send(
+      "\n" + "**" + " ● مرسل من قبل : " + "**" +
+      "\n" + "**" + "» " + message.author.tag + "**" +
+      "\n" + "**" + " ● اقتراحي هو : " + "**" +
+      "\n" + "**" + args + "**")
+
+  }
+  });
 
 
 client.on('message', message => {
@@ -185,7 +190,7 @@ const zead = [
      'كت تويت ‏| ما الشيء الذي يُفارقك؟',
      'كت تويت | موقف مميز فعلته مع شخص ولا يزال يذكره لك؟',
      'كت تويت ‏| أيهما ينتصر، الكبرياء أم الحب؟',
-     'كت تويت | بعد 10 سنين ايش بتكون ؟',
+     'كت تويت | بعد ١٠ سنين ايش بتكون ؟',
      'كت تويت ‏| مِن أغرب وأجمل الأسماء التي مرت عليك؟',
      '‏كت تويت | عمرك شلت مصيبة عن شخص برغبتك ؟',
      'كت تويت | أكثر سؤال وجِّه إليك مؤخرًا؟',
@@ -252,119 +257,117 @@ const secreT = [
 
 client.on("message", message => {
  if (message.content === "^help^") {
-        message.react("??")
-           message.react("??")
+        message.react("😘")
+           message.react("😵")
   const embed = new Discord.RichEmbed() 
       .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
--?? سرعه اتصال ممتازه
--?? سهل الاستخدام 
--? صيانه كل يوم
--?? مجاني بل كامل 
--?? البوت عربي و سيتم اضافه اللغه النكليزية
+-🚀 سرعه اتصال ممتازه
+-😎 سهل الاستخدام 
+-⚠ صيانه كل يوم
+-💵 مجاني بل كامل 
+-📚 البوت عربي و سيتم اضافه اللغه النكليزية
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-???اوامر عامة???
+💎『اوامر عامة』💎
                         
-??^^server ?معلومات عن السيرفر?                      
+💎^^server 『معلومات عن السيرفر』                      
 
-??^^servers ?علشان تشوف البوت بكم سيرفر اون لاين ?  
+💎^^servers 『علشان تشوف البوت بكم سيرفر اون لاين 』  
 
-??^^bot ?لمعرف البوت بكم سيرفر?
+💎^^bot 『لمعرف البوت بكم سيرفر』
 
-??^^date ?لمعرفه التاريخ?
+💎^^date 『لمعرفه التاريخ』
 
-??^^ping ?لمعرفه سرعه البوت?
+💎^^ping 『لمعرفه سرعه البوت』
 
-??^^members ?معلومات عن الاعضاء?
+💎^^members 『معلومات عن الاعضاء』
 
-??^^embed ?خاصيه غرد لكن بغير طريقه?
+💎^^embed 『خاصيه غرد لكن بغير طريقه』
 
-??^^say ?لي يكرر الكلام الذي تقوله?
+💎^^say 『لي يكرر الكلام الذي تقوله』
 
-??^^animal  ?كود لي اضهار صور  للحيوانات?
+💎^^animal  『كود لي اضهار صور  للحيوانات』
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-???اوامر ادارية???
+👑『اوامر ادارية』👑
 
-??^^rooms ?لمعرفه عدد رومات السيرفر?
+👑^^rooms 『لمعرفه عدد رومات السيرفر』
 
-??^^ban ?لتعطي شخص باند?
+👑^^ban 『لتعطي شخص باند』
 
-??^^kick ?لتعطي شخص كيك?
+👑^^kick 『لتعطي شخص كيك』
 
-??^^clear ?لمسح الشات برقم?
+👑^^clear 『لمسح الشات برقم』
 
-??^^edit  ?لتعديل رساله ?
+👑^^edit  『لتعديل رساله 』
 
-??^^ct  مـلاحظه: الاسم انت تختاره?لي انشاء روم كتابي?
+👑^^ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
 
-??^^cv  مـلاحظه: الاسم انت تختاره?لي انشاء روم صوتي?
+👑^^cv  مـلاحظه: الاسم انت تختاره『لي انشاء روم صوتي』
 
-??^^delet  ?كـود يحذف الـروم سواء صوتي او كتابي?
+👑^^delet  『كـود يحذف الـروم سواء صوتي او كتابي』
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-???القرعة???
+🎲『القرعة』🎲
 
-??^^roll 1   ?القرعة من 1 الى 25?
+🎲^^roll 1   『القرعة من 1 الى 25』
 
-??^^roll 2   ?القرعة من 1 الى 50?
+🎲^^roll 2   『القرعة من 1 الى 50』
 
-??^^roll 3   ?القرعة من 1 الى 75?
+🎲^^roll 3   『القرعة من 1 الى 75』
 
-??^^roll 4   ?القرعة من 1 الى 100?
+🎲^^roll 4   『القرعة من 1 الى 100』
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-???العاب???
+🎮『العاب』🎮
 
-??^^كت تويت
+🎮^^كت تويت
 
-??^^مريم 
+🎮^^مريم 
 
-??^^خواطر 
+🎮^^خواطر 
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-???اوامر الصور???
+🎴『اوامر الصور』🎴
 
-??^^avatar ?لي عرض صورتك او صوره اي شخص?
+🎴^^avatar 『لي عرض صورتك او صوره اي شخص』
 
-??^^image ?لي عرض صوره السيرفر?
+🎴^^image 『لي عرض صوره السيرفر』
 
-??قريبا
+🎴قريبا
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-???انواع الترحيب???
+🎎『انواع الترحيب』🎎
 
-?? ترحيب 1 / ترحيب 2 
+🎎 ترحيب 1 / ترحيب 2 
 
-?? ترحيب 3 / ترحيب 4
+🎎 ترحيب 3 / ترحيب 4
 
-?? ترحيب 5 / ترحيب 6 
+🎎 ترحيب 5 / ترحيب 6 
 
-?? ترحيب 7 / ترحيب 8
+🎎 ترحيب 7 / ترحيب 8
 
-?? ترحيب 9 / ترحيب 10
+🎎 ترحيب 9 / ترحيب 10
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-???الدعم الفني والمساعدة???
+💎『الدعم الفني والمساعدة』💎
 
 ^^invite | القسم الاول لي اضافه البوت 
 
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | @! Z |?A???#6947
+القسم الثالث مصمم البوت | @! Z |ĦÂмØ♚#6947 
 
-
-
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 
 
@@ -381,49 +384,47 @@ message.author.sendEmbed(embed)
 
 client.on("message", message => {
  if (message.content === "^help^^^") {
-        message.react("??")
-                message.react("??")
+        message.react("😮")
+                message.react("🤒")
   const embed = new Discord.RichEmbed() 
       .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
 	  
 	  
-? ?????????????????? ? 
-???اوامر ادارية???
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
+👑『اوامر ادارية』👑
 
-??^^ban ?لتعطي شخص باند?
+👑^^ban 『لتعطي شخص باند』
 
-??^^kick ?لتعطي شخص كيك?
+👑^^kick 『لتعطي شخص كيك』
 
-??^^clear ?لمسح الشات برقم?
+👑^^clear 『لمسح الشات برقم』
 
-??^^edit  ?لتعديل رساله ?
+👑^^edit  『لتعديل رساله 』
 
-??^^ct  مـلاحظه: الاسم انت تختاره?لي انشاء روم كتابي?
+👑^^ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
 
-??^^cv  مـلاحظه: الاسم انت تختاره?لي انشاء روم صوتي?
+👑^^cv  مـلاحظه: الاسم انت تختاره『لي انشاء روم صوتي』
 
-??^^delet  ?كـود يحذف الـروم سواء صوتي او كتابي?
+👑^^delet  『كـود يحذف الـروم سواء صوتي او كتابي』
 
-??^^bc  ?خيارات البرودكاست? 
+👑^^bc  『خيارات البرودكاست』 
 
-??^^rooms ?لمعرفه عدد رومات السيرفر?
+👑^^rooms 『لمعرفه عدد رومات السيرفر』
 
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 	  
 
-???الدعم الفني والمساعدة???
+💎『الدعم الفني والمساعدة』💎
 
 ^^invite | القسم الاول لي اضافه البوت 
 
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | @! Z |?A???#6947
-
- 
+القسم الثالث مصمم البوت | @! Z |ĦÂмØ♚#6947
 
 
 
@@ -442,49 +443,47 @@ message.author.sendEmbed(embed)
 
 client.on("message", message => {
  if (message.content === "^help^^") {
-        message.react("??")
-                message.react("??")
+        message.react("😳")
+                message.react("👻")
   const embed = new Discord.RichEmbed() 
       .setColor("#ffff00")
       .setThumbnail(message.author.avatarURL)
       .setDescription(`
 	  
 	  
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
-???اوامر عامة???
+💎『اوامر عامة』💎
                         
-??^^server ?معلومات عن السيرفر?                      
+💎^^server 『معلومات عن السيرفر』                      
 
-??^^servers ?علشان تشوف البوت بكم سيرفر اون لاين ?  
+💎^^servers 『علشان تشوف البوت بكم سيرفر اون لاين 』  
 
-??^^bot ?لمعرف البوت بكم سيرفر?
+💎^^bot 『لمعرف البوت بكم سيرفر』
 
-??^^date ?لمعرفه التاريخ?
+💎^^date 『لمعرفه التاريخ』
 
-??^^ping ?لمعرفه سرعه البوت?
+💎^^ping 『لمعرفه سرعه البوت』
 
-??^^members ?معلومات عن الاعضاء?
+💎^^members 『معلومات عن الاعضاء』
 
-??^^embed ?خاصيه غرد لكن بغير طريقه?
+💎^^embed 『خاصيه غرد لكن بغير طريقه』
 
-??^^say ?لي يكرر الكلام الذي تقوله?
+💎^^say 『لي يكرر الكلام الذي تقوله』
 
-??^^animal  ?كود لي اضهار صور  للحيوانات?
+💎^^animal  『كود لي اضهار صور  للحيوانات』
 
 
-? ?????????????????? ? 
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 	  
 
-???الدعم الفني والمساعدة???
+💎『الدعم الفني والمساعدة』💎
 
 ^^invite | القسم الاول لي اضافه البوت 
 
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | @! Z |?A???#6947
-
- 
+القسم الثالث مصمم البوت | @! Z |ĦÂмØ♚#6947
 
 
 `)
@@ -741,10 +740,10 @@ client.on('message', message => {
               Day = currentTime.getDate();
 
               var Date15= new Discord.RichEmbed()
-              .setTitle("**?  Date - التاريخ ? **")
+              .setTitle("**『  Date - التاريخ 』 **")
               .setColor('RANDOM')
               .setTimestamp()
-              .setDescription( "?"+ Day + "-" + Month + "-" + Year + "?")
+              .setDescription( "『"+ Day + "-" + Month + "-" + Year + "』")
               .setFooter(`*help to see all bot commands `, 'https://images-ext-1.discordapp.net/external/x-p4BwGofa_z_p9hpV-4hJPcqWh-aWGQzsmI189cDiY/%3Fwidth%3D344%26height%3D344/https/media.discordapp.net/attachments/372444859329544203/372701184055836682/ass.jpg?width=231&height=231')
                message.channel.sendEmbed(Date15);
       }
@@ -952,9 +951,8 @@ client.on('message', message=>{
 
 })
   
-  
-client.on('message', message => {
- if (message.content.startsWith("منور")) {
+  client.on('message', message => {
+ if (message.content.startsWith("!w")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -973,14 +971,14 @@ client.on('message', message => {
   .setColor('RANDOM')
   .setThumbnail(`${mentionavatar.avatarURL}`)
   .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-  .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
+  .setDescription('***WELCOME TO CLAN Z***')
   .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
    message.channel.sendEmbed(EsTeKnAN);
   }
-});  
-
-
-client.on('message', message => {
+});
+  
+  
+  client.on('message', message => {
  if (message.content.startsWith("ولكم")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
@@ -1004,11 +1002,11 @@ client.on('message', message => {
   .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
    message.channel.sendEmbed(EsTeKnAN);
   }
-});  
-
-
-client.on('message', message => {
- if (message.content.startsWith("!")) {
+});
+  
+  
+  client.on('message', message => {
+ if (message.content.startsWith("منور")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
@@ -1027,13 +1025,14 @@ client.on('message', message => {
   .setColor('RANDOM')
   .setThumbnail(`${mentionavatar.avatarURL}`)
   .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-  .setDescription('***????????????? ???? ?????? ?***')
+  .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
   .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
    message.channel.sendEmbed(EsTeKnAN);
   }
-});  
-
-
+});
+  
+  
+  
   
 client.on('message', message => {
  if (message.content.startsWith("ترحيب 1")) {
@@ -1298,141 +1297,12 @@ client.on('message', message => {
   .setColor('RANDOM')
   .setThumbnail(`${mentionavatar.avatarURL}`)
   .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-  .setDescription('***كل شيء يرحب بك كل شيء يتبسم ويتوهج فرحاً بقدومك كل شيء ينمق عبارات الترحيب ويصوغ كلمات الحب لوجودك كل شيء ينتظر مشارك??تك وقلمك الرائع وأبداعاتك كل شيء يردد حياك الله.***')
+  .setDescription('***كل شيء يرحب بك كل شيء يتبسم ويتوهج فرحاً بقدومك كل شيء ينمق عبارات الترحيب ويصوغ كلمات الحب لوجودك كل شيء ينتظر مشارك��تك وقلمك الرائع وأبداعاتك كل شيء يردد حياك الله.***')
   .setImage('https://www.askideas.com/media/13/Beautiful-Wooden-Welcome-Sign.jpg')
    message.channel.sendEmbed(EsTeKnAN);
   }
 });
 
-client.on('message', message => {
-    if (message.content.startsWith("رابط")) {
-        message.channel.createInvite({
-        thing: true,
-        maxUses: 1,
-        maxAge: 3600,
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-    const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-          .setDescription("تم أرسال الرابط برسالة خاصة")
-           .setAuthor(client.user.username, client.user.avatarURL)
-                 .setAuthor(client.user.username, client.user.avatarURL)
-                .setFooter('طلب بواسطة: ' + message.author.tag)
-
-      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
-              const Embed11 = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        
-    .setDescription("** الرابط : ساعه | عدد استخدامات الرابط : 1**")
-      message.author.sendEmbed(Embed11)
-    }
-}); 
-
- client.on('message', message => {
-                    var prefix = "#";
-
-           if (message.content.startsWith(prefix + "id")) {
-                     if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات :x:`);
-
-                message.guild.fetchInvites().then(invs => {
-      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
-      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-      var moment = require('moment');
-      var args = message.content.split(" ").slice(1);
-let user = message.mentions.users.first();
-var men = message.mentions.users.first();
- var heg;
- if(men) {
-     heg = men
- } else {
-     heg = message.author
- }
-var mentionned = message.mentions.members.first();
-  var h;
- if(mentionned) {
-     h = mentionned
- } else {
-     h = message.member
- }
-        moment.locale('ar-TN');
-      var id = new  Discord.RichEmbed()
-       
-    .setColor("#0a0909")
-    .setAuthor(message.author.username, message.author.avatarURL) 
-.addField(': دخولك لديسكورد قبل', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
-.addField(': انضمامك لسيرفر قبل', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
-.addField(': عدد الدعوات', inviteCount,false)
-.setFooter("-")  
-    message.channel.sendEmbed(id);
-})
-}
-    
-
-         
-     });
-
-client.on('message', message => {
-              if(!message.channel.guild) return;
-    var prefix = "$";
-    if(message.content.startsWith('$bc')) {
-    if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
-    let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "z Bot";
-    let request = `Requested By ${message.author.username}`;
-    if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
-    msg.react('?')
-    .then(() => msg.react('?'))
-    .then(() =>msg.react('?'))
-
-    let reaction1Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
-    let reaction2Filter = (reaction, user) => reaction.emoji.name === '?' && user.id === message.author.id;
-  let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
-    let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
-    reaction1.on("collect", r => {
-    message.channel.send(`? | Done ... The Broadcast Message Has Been Sent For ${message.guild.members.size} Members`).then(m => m.delete(5000));
-    message.guild.members.forEach(m => {
-    var bc = new
-       Discord.RichEmbed()
-       .setColor('RANDOM')
-       .setTitle('Broadcast')
-       .addField('Server', message.guild.name)
-       .addField('Sender', message.author.username)
-       .addField('Message', args)
-       .setImage("")
-       .setThumbnail(message.author.avatarURL)
-       .setFooter(copy, client.user.avatarURL);
-    m.send({ embed: bc })
-    msg.delete();
-    })
-    })
-    reaction2.on("collect", r => {
-    message.channel.send(`**Broadcast Canceled.**`).then(m => m.delete(5000));
-    msg.delete();
-    })
-    })
-    }
-    });
-
-client.on('ready', function(){
-    var ms = 60000 ;
-    var setGame = ['RMDAN KREM','RMDAN KREM','^^help | ^^invite','RMDAN KREM'];
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/GamerzBot`);
-    }, ms);
-
-});
 
 client.on('message', function(message) {
     if (!message.member.hasPermissions(['ADMINISTRATOR'])){
