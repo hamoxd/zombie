@@ -952,7 +952,7 @@ client.on('message', message=>{
 })
   
   client.on('message', message => {
- if (message.content.startsWith("!w")) {
+ if (message.content.startsWith("!W")) {
                                  var mentionned = message.mentions.users.first();
              var mentionavatar;
                if(mentionned){
