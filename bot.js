@@ -59,7 +59,7 @@ client.on("message", message => {
       .setColor("RANDOM")
       .addField("『ZOMBIE BOT』 『اسم البوت』", true)
       
-      .addField("『@حـ♥̨̥̬̩سوني آإلعرآإقـ♥̨̥̬̩ي#7725』『مصمم البوت』", true)
+      .addField("『@ @! Z |ĦÂмØ♚#6947』 『مصمم البوت』", true)
       
       .addField("『^help^』😘『اذا تبي جميع الاوامر مع اوامر اضافية』😵", true)
       
