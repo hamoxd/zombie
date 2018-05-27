@@ -11,19 +11,7 @@ client.on('message', message => {
       }
 });
 
-LOka.on('ready', () => {
-  console.log(`Logged in as ${LOka.user.tag} !`);
- 
-});
-LOka.on('ready',  () => {
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log('      ~            ~  By : KBOOOOOOOOSH-YT ~           ~    ');
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log(`Logged in as  * [ "  KBOOOOOOOOSH-YT " ] servers! [ " ${LOka.guilds.size} " ] Users! [ " ${LOka.users.size} " ]`);
- 
-       
+        
    
  
 });
