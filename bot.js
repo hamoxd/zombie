@@ -11,6 +11,10 @@ client.on('message', message => {
       }
 });
 
+LOka.on('ready', () => {
+  console.log(`Logged in as ${LOka.user.tag} !`);
+ 
+});
 LOka.on('ready',  () => {
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
