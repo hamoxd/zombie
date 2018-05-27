@@ -973,7 +973,7 @@ client.on('message', message=>{
   .setColor('RANDOM')
   .setThumbnail(`${mentionavatar.avatarURL}`)
   .addField("***شكرا الانضمامك الينا***" ,mentionavatar.username )
-  .setDescription('***WELCOME TO CLAN Z***')
+  .setDescription('***𝕎𝔼𝕃ℂ𝕆𝕄𝔼 𝕋𝕆 ℂ𝕃𝔸ℕ ℤ***')
   .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
    message.channel.sendEmbed(EsTeKnAN);
   }
