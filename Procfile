@@ -1,4 +1,3 @@
-node bot.js
 npm install ytdl-core
 npm install discord.js
 nvm use 8
