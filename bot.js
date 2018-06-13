@@ -14,6 +14,7 @@ client.on('message', message => {
 
 
 
+const Discord = require("discord.js");
 const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
 const getYoutubeID = require('get-youtube-id');
@@ -303,7 +304,8 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
     
    }
    }); 
-
+   
+	client.login("NDU1NjA0NTM3MjU3MDk5Mjg0.DgI1Fg.W30UZDs_6MVllE6Jf7unOxvfb_o");
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
