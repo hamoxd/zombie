@@ -9,3 +9,4 @@ npm install get-youtube-id
 npm install fs
 npm install request
 npm install discord.js node-opus --save
+node bot.js
